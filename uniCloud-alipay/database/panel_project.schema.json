@@ -1,0 +1,33 @@
+{
+	"bsonType": "object",
+	"required": [],
+	"permission": {
+		"read": true,
+		"create": true,
+		"update": true,
+		"delete": true
+	},
+	"properties": {
+		"_id": {
+			"description": "ID，系统自动生成"
+		},
+		"name": {
+			"bsonType": "string",
+			"label": "项目名称",
+			"minLength": 2,
+			"maxLength": 20,
+			"description": "项目名称",
+			"errorMessage": {
+				"required": "{label}必填",
+				"minLength": "{label}不能小于{minLength}个字符"
+			},
+			"component": {
+				"name": "input",
+				"props": {
+					"placeholder": "请输入项目名称"
+				}
+			}
+		}
+	}
+
+}
