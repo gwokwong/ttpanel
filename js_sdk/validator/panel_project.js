@@ -14,6 +14,86 @@ const validator = {
       }
     ],
     "label": "项目名称"
+  },
+  "desc": {
+    "rules": [
+      {
+        "format": "string"
+      }
+    ],
+    "label": "描述"
+  },
+  "userid": {
+    "rules": [
+      {
+        "format": "int"
+      }
+    ],
+    "label": "创建人"
+  },
+  "personal": {
+    "rules": [
+      {
+        "format": "int"
+      }
+    ],
+    "label": "是否个人项目"
+  },
+  "user_simple": {
+    "rules": [
+      {
+        "format": "int"
+      }
+    ],
+    "label": "成员总数"
+  },
+  "dialog_id": {
+    "rules": [
+      {
+        "format": "string"
+      }
+    ],
+    "label": "聊天会话ID"
+  },
+  "archived_at": {
+    "rules": [
+      {
+        "format": "timestamp"
+      }
+    ],
+    "label": "归档时间"
+  },
+  "archived_userid": {
+    "rules": [
+      {
+        "format": "string"
+      }
+    ],
+    "label": "归档用户"
+  },
+  "created_at": {
+    "rules": [
+      {
+        "format": "timestamp"
+      }
+    ],
+    "label": "创建时间"
+  },
+  "updated_at": {
+    "rules": [
+      {
+        "format": "timestamp"
+      }
+    ],
+    "label": "更新时间"
+  },
+  "deleted_at": {
+    "rules": [
+      {
+        "format": "timestamp"
+      }
+    ],
+    "label": "删除时间"
   }
 }
 

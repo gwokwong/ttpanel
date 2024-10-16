@@ -27,6 +27,63 @@
 					"placeholder": "请输入项目名称"
 				}
 			}
+		},
+		"desc": {
+			"bsonType": "string",
+			"label": "描述",
+			"description": "描述",
+			"component": {
+				"name": "input",
+				"props": {
+					"placeholder": "请输入描述"
+				}
+			}
+		},
+		"userid": {
+			"bsonType": "int",
+			"label": "创建人",
+			"description": "创建人"
+		},
+		"personal": {
+			"bsonType": "int",
+			"label": "是否个人项目",
+			"description": "是否个人项目"
+		},
+		"user_simple": {
+			"bsonType": "int",
+			"label": "成员总数",
+			"description": "成员总数"
+		},
+		"dialog_id": {
+			"bsonType": "string",
+			"label": "聊天会话ID",
+			"description": "聊天会话ID"
+		},
+		"archived_at": {
+			"bsonType": "timestamp",
+			"label": "归档时间",
+			"description": "归档时间"
+		},
+		"archived_userid": {
+			"bsonType": "string",
+			"label": "归档用户",
+			"description": "归档用户"
+		},
+		"created_at": {
+			"bsonType": "timestamp",
+			"label": "创建时间",
+			"description": "创建时间"
+		},
+
+		"updated_at": {
+			"bsonType": "timestamp",
+			"label": "更新时间",
+			"description": "更新时间"
+		},
+		"deleted_at": {
+			"bsonType": "timestamp",
+			"label": "删除时间",
+			"description": "删除时间"
 		}
 	}
 

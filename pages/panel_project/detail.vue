@@ -1,6 +1,6 @@
 <template>
   <view class="container">
-    <unicloud-db ref="udb" v-slot:default="{data, loading, error, options}" :options="options" :collection="collectionList" field="name" :where="queryWhere" :getone="true" :manual="true">
+    <unicloud-db ref="udb" v-slot:default="{data, loading, error, options}" :options="options" :collection="collectionList" field="name,desc,userid,personal,user_simple,dialog_id,archived_at,archived_userid,created_at,updated_at,deleted_at" :where="queryWhere" :getone="true" :manual="true">
       <view v-if="error">{{error.message}}</view>
       <view v-else-if="loading">
         <uni-load-more :contentText="loadMore" status="loading"></uni-load-more>
@@ -9,6 +9,46 @@
         <view>
           <text>项目名称</text>
           <text>{{data.name}}</text>
+        </view>
+        <view>
+          <text>描述</text>
+          <text>{{data.desc}}</text>
+        </view>
+        <view>
+          <text>创建人</text>
+          <text>{{data.userid}}</text>
+        </view>
+        <view>
+          <text>是否个人项目</text>
+          <text>{{data.personal}}</text>
+        </view>
+        <view>
+          <text>成员总数</text>
+          <text>{{data.user_simple}}</text>
+        </view>
+        <view>
+          <text>聊天会话ID</text>
+          <text>{{data.dialog_id}}</text>
+        </view>
+        <view>
+          <text>归档时间</text>
+          <uni-dateformat :threshold="[0, 0]" :date="data.archived_at"></uni-dateformat>
+        </view>
+        <view>
+          <text>归档用户</text>
+          <text>{{data.archived_userid}}</text>
+        </view>
+        <view>
+          <text>创建时间</text>
+          <uni-dateformat :threshold="[0, 0]" :date="data.created_at"></uni-dateformat>
+        </view>
+        <view>
+          <text>更新时间</text>
+          <uni-dateformat :threshold="[0, 0]" :date="data.updated_at"></uni-dateformat>
+        </view>
+        <view>
+          <text>删除时间</text>
+          <uni-dateformat :threshold="[0, 0]" :date="data.deleted_at"></uni-dateformat>
         </view>
       </view>
     </unicloud-db>
