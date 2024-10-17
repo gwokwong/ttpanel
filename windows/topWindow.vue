@@ -68,20 +68,11 @@
 		</uni-popup>
 		
 		<uni-popup ref="createproject" type="center" :is-mask-click="false">
-			
 			<view class="modal">
-				
-			
 					  <createProject class="modal-content" />
-			
 			</view>
 		</uni-popup>
-		
-		
-		
-		
-		
-		
+
 		<!-- #endif -->
 		
 		

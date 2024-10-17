@@ -168,6 +168,11 @@
 			"style": {
 				"navigationBarTitleText": "列表"
 			}
+		},{
+			"path": "pages/projects/detail",
+			"style": {
+				"navigationBarTitleText": "详情"
+			}
 		}, {
 			"path": "pages/project_users/add",
 			"style": {
