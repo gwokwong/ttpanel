@@ -1,9 +1,21 @@
 <template>
-	<scroll-view class="sidebar" scroll-y="true">
-		<uni-data-menu ref="menu" :value="currentMenu" :staticMenu="staticMenu" collection="opendb-admin-menus"
-			:page-size="500" :field="field" where="enable==true" orderby="sort asc" active-text-color="#409eff" @select="select">
-		</uni-data-menu>
-	</scroll-view>
+
+	<view class="sidebar">
+		<scroll-view scroll-y="true" style="height: 60vh;">
+			<uni-data-menu ref="menu" :value="currentMenu" :staticMenu="staticMenu" collection="opendb-admin-menus"
+				:page-size="500" :field="field" where="enable==true" orderby="sort asc" active-text-color="#409eff"
+				@select="select">
+			</uni-data-menu>
+		</scroll-view>
+		<!-- 触发对话框的按钮 -->
+		<button @click="tochange">新建项目</button>
+		
+		<!-- #ifdef H5 -->
+		
+		<!-- #endif -->
+
+	</view>
+	
 </template>
 
 <script>
@@ -11,18 +23,54 @@
 		mapState,
 		mapActions
 	} from 'vuex'
+	import { validator } from '../js_sdk/validator/projects.js';
 	import config from '@/admin.config.js'
+	
+	const db = uniCloud.database();
+	const dbCmd = db.command;
+	const dbCollectionName = 'projects';
+	
+	function getValidator(fields) {
+	  let result = {}
+	  for (let key in validator) {
+	    if (fields.includes(key)) {
+	      result[key] = validator[key]
+	    }
+	  }
+	  return result
+	}
+	
 	export default {
 		data() {
+			let formData = {
+				"name": "",
+				"desc": "",
+				"userid": null,
+				"personal": null,
+				"user_simple": null,
+				"dialog_id": "",
+				"archived_at": null,
+				"archived_userid": "",
+				"created_at": null,
+				"updated_at": null,
+				"deleted_at": null
+			}
+
 			return {
 				...config.sideBar,
 				field: 'url as value, name as text, menu_id, parent_id, sort, icon, permission',
-				currentMenu: '/'
+				currentMenu: '/',
+				showCreateDialog: false,
+				formData,
+				formOptions: {},
+				rules: {
+					...getValidator(Object.keys(formData))
+				}
 			}
 		},
 		computed: {
 			...mapState('app', ['inited', 'navMenu', 'active']),
-			userInfo () {
+			userInfo() {
 				return this.$uniIdPagesStore.store.userInfo
 			}
 		},
@@ -51,10 +99,20 @@
 				}
 			}
 		},
+		onReady() {
+		  this.$refs.form.setRules(this.rules)
+		},
 		methods: {
+
 			...mapActions({
 				setRoutes: 'app/setRoutes'
 			}),
+			
+			tochange(){
+				uni.$emit("create_project",{"source":"left_window"})
+				console.log("tochange click")
+				
+			},
 			select(e, routes) {
 				let url = e.value
 				if (!url) {
@@ -102,6 +160,41 @@
 				}
 				return path.split('?')[0]
 			},
+			
+			
+			/**
+			 * 验证表单并提交
+			 */
+			submit() {
+			  uni.showLoading({
+			    mask: true
+			  })
+			  this.$refs.form.validate().then((res) => {
+			    return this.submitForm(res)
+			  }).catch(() => {
+			  }).finally(() => {
+			    uni.hideLoading()
+			  })
+			},
+			
+			/**
+			 * 提交表单
+			 */
+			submitForm(value) {
+			  // 使用 clientDB 提交数据
+			  return db.collection(dbCollectionName).add(value).then((res) => {
+			    uni.showToast({
+			      title: '新增成功'
+			    })
+			    this.getOpenerEventChannel().emit('refreshData')
+			    setTimeout(() => uni.navigateBack(), 500)
+			  }).catch((err) => {
+			    uni.showModal({
+			      content: err.message || '请求服务失败',
+			      showCancel: false
+			    })
+			  })
+			}
 		}
 	}
 </script>
@@ -117,11 +210,13 @@
 		background-color: $left-window-bg-color;
 		padding-bottom: 10px;
 	}
+
 	/* #ifdef H5 */
 	.sidebar ::-webkit-scrollbar {
 		display: none;
 		// scrollbar-width: thin;
 	}
+
 	/* #endif */
 
 	.title {

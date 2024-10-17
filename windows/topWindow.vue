@@ -66,6 +66,25 @@
 				</scroll-view>
 			</view>
 		</uni-popup>
+		
+		<uni-popup ref="createproject" type="center" :is-mask-click="false">
+			
+			<view class="modal">
+				
+			
+					  <createProject class="modal-content" />
+			
+			</view>
+		</uni-popup>
+		
+		
+		
+		
+		
+		
+		<!-- #endif -->
+		
+		
 		<!-- 冗余代码，临时处理 uni-datetime-picker 国际化不生效的问题 -->
 		<!-- #ifdef H5 -->
 		<uni-datetime-picker type="date" v-show="false"></uni-datetime-picker>
@@ -80,11 +99,12 @@
 	} from 'vuex'
 
 	import errorLog from '@/windows/components/error-log.vue'
+	import createProject from '@/components/create-project/create-project.vue'
 	import config from '@/admin.config.js'
 
 	export default {
 		components: {
-			errorLog
+			errorLog,createProject
 		},
 		props: {
 			navigationBarTitleText: {
@@ -101,9 +121,21 @@
 			return {
 				...config.navBar,
 				popupMenuOpened: false,
+				popupCreateOpened: false,
 				mpCapsule: 0,
 				langIndex:0
 			}
+		},
+		created() {
+			uni.$on("create_project",(data)=>{
+				console.log("接收到事件")
+				if (this.popupCreateOpened) {
+					this.popupCreateOpened = false
+				}
+				this.$refs.createproject.open()
+			
+			})
+			
 		},
 		computed: {
 			...mapState('app', ['appName', 'routes', 'theme']),
@@ -117,7 +149,8 @@
 					if(theme.value === this.theme) i = index
 				})
 				return i
-			}
+			},
+			
 		},
 		mounted() {
 			// #ifdef MP
@@ -143,6 +176,8 @@
 				}
 				this.$refs.errorLogsPopup.open()
 			},
+			
+			
 			showPasswordPopup() {
 				if (this.popupMenuOpened) {
 					this.popupMenuOpened = false

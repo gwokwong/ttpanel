@@ -1,3 +1,8 @@
+<!-- <template>
+	<view>
+		<create-project ref="createproject" ></create-project>
+	</view>
+</template> -->
 <script>
 	import {
 		mapActions,
@@ -12,6 +17,10 @@
 	export default {
 		created() {
 			this.clear = undefined
+			uni.$on("create_project",(data)=>{
+				console.log("接收到事件")
+
+			})
 		},
 		methods: {
 			...mapMutations('app', ['SET_THEME']),
