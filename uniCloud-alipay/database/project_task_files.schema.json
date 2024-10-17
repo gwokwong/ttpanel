@@ -1,0 +1,82 @@
+{
+	"bsonType": "object",
+	"required": [],
+	"permission": {
+		"read": false,
+		"create": false,
+		"update": false,
+		"delete": false
+	},
+	"properties": {
+		"_id": {
+			"description": "ID，系统自动生成"
+		},
+		
+		"project_id": {
+			"bsonType": "timestamp",
+			"label": "项目ID",
+			"description": "项目ID"
+		},
+		
+		"task_id": {
+			"bsonType": "string",
+			"label": "任务ID",
+			"description": "任务ID"
+		},
+		
+		"name": {
+			"bsonType": "string",
+			"label": "文件名称",
+			"description": "文件名称"
+		},
+		
+		"size": {
+			"bsonType": "int",
+			"label": "文件大小(B)",
+			"description": "创建时间"
+		},
+		
+		"ext": {
+			"bsonType": "string",
+			"label": "文件格式",
+			"description": "文件格式"
+		},
+		
+		"path": {
+			"bsonType": "string",
+			"label": "文件地址",
+			"description": "文件地址"
+		},
+		
+		"thumb": {
+			"bsonType": "string",
+			"label": "缩略图",
+			"description": "缩略图"
+		},
+		"userid": {
+			"bsonType": "string",
+			"label": "上传用户ID",
+			"description": "上传用户ID"
+		},
+		"download": {
+			"bsonType": "string",
+			"label": "下载次数",
+			"description": "下载次数"
+		},
+		"created_at": {
+			"bsonType": "timestamp",
+			"label": "创建时间",
+			"description": "创建时间"
+		},
+		"updated_at": {
+			"bsonType": "timestamp",
+			"label": "更新时间",
+			"description": "更新时间"
+		},
+		"deleted_at": {
+			"bsonType": "timestamp",
+			"label": "删除时间",
+			"description": "删除时间"
+		}
+	}
+}

@@ -1,0 +1,46 @@
+// 文档教程: https://uniapp.dcloud.net.cn/uniCloud/schema
+{
+	"bsonType": "object",
+	"required": [],
+	"permission": {
+		"read": true,
+		"create": true,
+		"update": true,
+		"delete": true
+	},
+	"properties": {
+		"_id": {
+			"description": "ID，系统自动生成"
+		},
+		"userid": {
+			"bsonType": "string",
+			"label": "用户id",
+			"description": "用户id"
+		},
+		"task_id": {
+			"bsonType": "string",
+			"label": "任务id",
+			"description": "任务id"
+		},
+		"type": {
+			"bsonType": "int",
+			"label": "提醒类型：0 任务开始提醒，1 距离到期提醒，2到期超时提醒",
+			"description": "提醒类型：0 任务开始提醒，1 距离到期提醒，2到期超时提醒"
+		},
+		"created_at": {
+			"bsonType": "timestamp",
+			"label": "创建时间",
+			"description": "创建时间"
+		},
+		"updated_at": {
+			"bsonType": "timestamp",
+			"label": "更新时间",
+			"description": "更新时间"
+		},
+		"deleted_at": {
+			"bsonType": "timestamp",
+			"label": "删除时间",
+			"description": "删除时间"
+		}
+	}
+}

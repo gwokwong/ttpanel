@@ -1,0 +1,166 @@
+{
+	"bsonType": "object",
+	"required": [],
+	"permission": {
+		"read": true,
+		"create": true,
+		"update": true,
+		"delete": true
+	},
+	"properties": {
+		"_id": {
+			"description": "ID，系统自动生成"
+		},
+		"parent_id": {
+			"bsonType": "string",
+			"label": "父级任务ID",
+			"description": "父级任务ID"
+		},
+		"project_id": {
+			"bsonType": "string",
+			"label": "项目ID",
+			"description": "项目ID"
+		},
+		"column_id": {
+			"bsonType": "string",
+			"label": "列表ID",
+			"description": "列表ID"
+		},
+		"dialog_id": {
+			"bsonType": "string",
+			"label": "聊天会话ID",
+			"description": "聊天会话ID"
+		},
+		"flow_item_id": {
+			"bsonType": "string",
+			"label": "工作流状态ID",
+			"description": "工作流状态ID"
+		},
+		"flow_item_name": {
+			"bsonType": "string",
+			"label": "工作流状态名称",
+			"description": "工作流状态名称"
+		},
+
+		"name": {
+			"bsonType": "string",
+			"label": "标题",
+			"description": "标题"
+		},
+
+		"color": {
+			"bsonType": "string",
+			"label": "颜色",
+			"description": "颜色"
+		},
+
+		"desc": {
+			"bsonType": "string",
+			"label": "描述",
+			"description": "描述"
+		},
+
+		"start_at": {
+			"bsonType": "timestamp",
+			"label": "计划开始时间",
+			"description": "计划开始时间"
+		},
+		"end_at": {
+			"bsonType": "timestamp",
+			"label": "计划结束时间",
+			"description": "计划结束时间"
+		},
+
+		"archived_at": {
+			"bsonType": "timestamp",
+			"label": "归档时间",
+			"description": "归档时间"
+		},
+
+		"archived_userid": {
+			"bsonType": "string",
+			"label": "归档用户id",
+			"description": "归档用户id"
+		},
+		
+		
+		"archived_follow": {
+			"bsonType": "int",
+			"label": "跟随项目归档（项目取消归档时任务也取消归档）",
+			"description": "跟随项目归档（项目取消归档时任务也取消归档）"
+		},
+		
+		"complete_at": {
+			"bsonType": "timestamp",
+			"label": "完成时间",
+			"description": "完成时间"
+		},
+		
+		"userid": {
+			"bsonType": "string",
+			"label": "创建人id",
+			"description": "创建人id"
+		},
+		
+		"visibility": {
+			"bsonType": "int",
+			"label": "任务可见性：1-项目人员 2-任务人员 3-指定成员",
+			"description": "任务可见性：1-项目人员 2-任务人员 3-指定成员"
+		},
+		
+		"p_level": {
+			"bsonType": "int",
+			"label": "优先级",
+			"description": "优先级"
+		},
+		
+		"p_name": {
+			"bsonType": "string",
+			"label": "优先级名称",
+			"description": "优先级名称"
+		},
+		
+		"p_color": {
+			"bsonType": "string",
+			"label": "优先级颜色",
+			"description": "优先级颜色"
+		},
+		
+		"sort": {
+			"bsonType": "int",
+			"label": "排序(ASC)",
+			"description": "排序(ASC)"
+		},
+		
+		"loop": {
+			"bsonType": "string",
+			"label": "重复周期",
+			"description": "重复周期"
+		},
+		"loop_at": {
+			"bsonType": "timestamp",
+			"label": "下一次重复时间",
+			"description": "下一次重复时间"
+		},
+		"created_at": {
+			"bsonType": "timestamp",
+			"label": "创建时间",
+			"description": "创建时间"
+		},
+		"updated_at": {
+			"bsonType": "timestamp",
+			"label": "更新时间",
+			"description": "更新时间"
+		},
+		"deleted_at": {
+			"bsonType": "timestamp",
+			"label": "删除时间",
+			"description": "删除时间"
+		},
+		"deleted_userid": {
+			"bsonType": "string",
+			"label": "删除的用户id",
+			"description": "删除的用户id"
+		}
+	}
+}

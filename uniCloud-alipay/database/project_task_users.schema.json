@@ -1,0 +1,55 @@
+{
+	"bsonType": "object",
+	"required": [],
+	"permission": {
+		"read": true,
+		"create": true,
+		"update": true,
+		"delete": true
+	},
+	"properties": {
+		"_id": {
+			"description": "ID，系统自动生成"
+		},
+		
+		"project_id": {
+			"bsonType": "string",
+			"label": "项目ID",
+			"description": "项目ID"
+		},
+		
+		"task_id": {
+			"bsonType": "string",
+			"label": "任务ID",
+			"description": "任务ID"
+		},
+		
+		"task_pid": {
+			"bsonType": "string",
+			"label": "任务ID（如果是子任务则是父级任务ID）",
+			"description": "任务ID（如果是子任务则是父级任务ID）"
+		},
+		
+		"userid": {
+			"bsonType": "string",
+			"label": "用户id",
+			"description": "用户id"
+		},
+		
+		"owner": {
+			"bsonType": "int",
+			"label": "是否任务负责人",
+			"description": "是否任务负责人"
+		},		
+		"created_at": {
+			"bsonType": "timestamp",
+			"label": "创建时间",
+			"description": "创建时间"
+		},
+		"updated_at": {
+			"bsonType": "timestamp",
+			"label": "更新时间",
+			"description": "更新时间"
+		}
+	}
+}

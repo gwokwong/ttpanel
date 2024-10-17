@@ -1,0 +1,82 @@
+{
+	"bsonType": "object",
+	"required": [],
+	"permission": {
+		"read": true,
+		"create": true,
+		"update": true,
+		"delete": true
+	},
+	"properties": {
+		"_id": {
+			"description": "ID，系统自动生成"
+		},
+		
+		"project_id": {
+			"bsonType": "string",
+			"label": "项目ID",
+			"description": "项目ID"
+		},
+		
+		"flow_id": {
+			"bsonType": "string",
+			"label": "流程IDID",
+			"description": "流程ID"
+		},
+		"name": {
+			"bsonType": "string",
+			"label": "名称",
+			"description": "名称"
+		},
+		"status": {
+			"bsonType": "string",
+			"label": "状态",
+			"description": "状态"
+		},
+		"turns": {
+			"bsonType": "string",
+			"label": "可流转",
+			"description": "可流转"
+		},
+		"userids": {
+			"bsonType": "string",
+			"label": "状态负责人ID",
+			"description": "状态负责人ID"
+		},
+		"usertype": {
+			"bsonType": "string",
+			"label": "流转模式",
+			"description": "流转模式"
+		},
+		"userlimit": {
+			"bsonType": "string",
+			"label": "限制负责人",
+			"description": "限制负责人"
+		},
+		"column_id": {
+			"bsonType": "string",
+			"label": "对应的项目列表",
+			"description": "对应的项目列表"
+		},
+		"sort": {
+			"bsonType": "int",
+			"label": "排序",
+			"description": "排序"
+		},
+		"created_at": {
+			"bsonType": "timestamp",
+			"label": "创建时间",
+			"description": "创建时间"
+		},
+		"updated_at": {
+			"bsonType": "timestamp",
+			"label": "更新时间",
+			"description": "更新时间"
+		},
+		"deleted_at": {
+			"bsonType": "timestamp",
+			"label": "删除时间",
+			"description": "删除时间"
+		}
+	}
+}

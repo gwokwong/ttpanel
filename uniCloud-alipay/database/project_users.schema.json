@@ -1,0 +1,54 @@
+{
+	"bsonType": "object",
+	"required": [],
+	"permission": {
+		"read": true,
+		"create": true,
+		"update": true,
+		"delete": true
+	},
+	"properties": {
+		"_id": {
+			"description": "ID，系统自动生成"
+		},
+			
+		"project_id": {
+			"bsonType": "string",
+			"label": "项目ID",
+			"description": "项目ID"
+		},
+		
+		"userid": {
+			"bsonType": "string",
+			"label": "用户id",
+			"description": "用户id"
+		},
+		"owner": {
+			"bsonType": "int",
+			"label": "是否负责人",
+			"description": "是否负责人"
+		},
+		
+		"top_at": {
+			"bsonType": "timestamp",
+			"label": "置顶时间",
+			"description": "置顶时间"
+		},		
+		
+		"created_at": {
+			"bsonType": "timestamp",
+			"label": "创建时间",
+			"description": "创建时间"
+		},
+		"updated_at": {
+			"bsonType": "timestamp",
+			"label": "更新时间",
+			"description": "更新时间"
+		},
+		"deleted_at": {
+			"bsonType": "timestamp",
+			"label": "删除时间",
+			"description": "删除时间"
+		}
+	}
+}

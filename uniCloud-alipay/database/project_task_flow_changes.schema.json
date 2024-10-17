@@ -1,0 +1,66 @@
+// 文档教程: https://uniapp.dcloud.net.cn/uniCloud/schema
+{
+	"bsonType": "object",
+	"required": [],
+	"permission": {
+		"read": false,
+		"create": false,
+		"update": false,
+		"delete": false
+	},
+	"properties": {
+		"_id": {
+			"description": "ID，系统自动生成"
+		},
+		"task_id": {
+			"bsonType": "string",
+			"label": "任务ID",
+			"description": "任务ID"
+		},
+		
+		"userid": {
+			"bsonType": "string",
+			"label": "用户id",
+			"description": "用户id"
+		},
+		
+		"before_flow_item_id": {
+			"bsonType": "string",
+			"label": "（变化前）工作流状态ID",
+			"description": "（变化前）工作流状态ID"
+		},
+		
+		"before_flow_item_name": {
+			"bsonType": "string",
+			"label": "（变化前）工作流状态名称",
+			"description": "（变化前）工作流状态名称"
+		},
+		
+		"after_flow_item_id": {
+			"bsonType": "string",
+			"label": "（变化后）工作流状态ID",
+			"description": "（变化后）工作流状态ID"
+		},
+		
+		"after_flow_item_name": {
+			"bsonType": "string",
+			"label": "（变化后）工作流状态名称",
+			"description": "（变化后）工作流状态名称"
+		},
+		"created_at": {
+			"bsonType": "timestamp",
+			"label": "创建时间",
+			"description": "创建时间"
+		},
+		"updated_at": {
+			"bsonType": "timestamp",
+			"label": "更新时间",
+			"description": "更新时间"
+		},
+		"deleted_at": {
+			"bsonType": "timestamp",
+			"label": "删除时间",
+			"description": "删除时间"
+		}
+	}
+}

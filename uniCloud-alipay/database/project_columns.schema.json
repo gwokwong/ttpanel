@@ -1,0 +1,50 @@
+{
+	"bsonType": "object",
+	"required": [],
+	"permission": {
+		"read": true,
+		"create": true,
+		"update": true,
+		"delete": true
+	},
+	"properties": {
+		"_id": {
+			"description": "ID，系统自动生成"
+		},
+		"project_id": {
+			"bsonType": "string",
+			"label": "项目id",
+			"description": "项目id"
+		},
+		"name": {
+			"bsonType": "string",
+			"label": "项目列表名称",
+			"description": "列表名称"
+		},
+		"color": {
+			"bsonType": "string",
+			"label": "颜色",
+			"description": "颜色"
+		},
+		"sort": {
+			"bsonType": "int",
+			"label": "排序(ASC)",
+			"description": "排序(ASC)"
+		},
+		"created_at": {
+			"bsonType": "timestamp",
+			"label": "创建时间",
+			"description": "创建时间"
+		},
+		"updated_at": {
+			"bsonType": "timestamp",
+			"label": "更新时间",
+			"description": "更新时间"
+		},
+		"deleted_at": {
+			"bsonType": "timestamp",
+			"label": "删除时间",
+			"description": "删除时间"
+		}
+	}
+}

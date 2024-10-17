@@ -1,0 +1,47 @@
+{
+	"bsonType": "object",
+	"required": [],
+	"permission": {
+		"read": true,
+		"create": true,
+		"update": true,
+		"delete": true
+	},
+	"properties": {
+		"_id": {
+			"description": "ID，系统自动生成"
+		},
+		"project_id": {
+			"bsonType": "string",
+			"label": "项目ID",
+			"description": "项目ID"
+		},
+		"task_id": {
+			"bsonType": "string",
+			"label": "任务ID",
+			"description": "任务ID"
+		},
+		"name": {
+			"bsonType": "string",
+			"label": "标题",
+			"description": "标题"
+		},
+		"color": {
+			"bsonType": "string",
+			"label": "颜色",
+			"description": "颜色"
+		},
+		
+		"created_at": {
+			"bsonType": "timestamp",
+			"label": "创建时间",
+			"description": "创建时间"
+		},
+
+		"updated_at": {
+			"bsonType": "timestamp",
+			"label": "更新时间",
+			"description": "更新时间"
+		}
+	}
+}
